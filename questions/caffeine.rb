@@ -10,30 +10,32 @@ class CaffeineQuestions
 
         coffee = prompt.slider("How many cups of coffee do you have a day?", min: 0, max: 10, step: 1)
 
-        if coffee == 0
+        case coffee
+        when 0 
             score += 10
-        elsif coffee == 1
+        when 1
             score += 9
-        elsif coffee == 2
+        when 2 
             score += 8
-        elsif coffee == 3
+        when 3
             score += 7
-        elsif coffee == 4
+        when 4
             score += 6
-        elsif coffee == 5
+        when 5
             score += 5
-        elsif coffee == 6
+        when 6
             score += 4
-        elsif coffee == 7
+        when 7
             score += 3
-        elsif coffee == 8
+        when 8
             score += 2
-        elsif coffee == 9
+        when 9
             score += 1
+        when 10
+            score += 0
         else
             score += 0
         end
-
 
         timeOfDay = prompt.select("What time of the day do you have your last coffee?", %w(Morning Midday Afternoon Night))
 

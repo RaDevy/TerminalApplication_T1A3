@@ -1,4 +1,5 @@
 require_relative "questions/caffeine.rb"
+require_relative "questions/bmi.rb"
 require_relative "finalScoreAdvice.rb"
 require "tty-prompt"
 require "tty-progressbar"
@@ -55,7 +56,7 @@ if choice == "Start"
 
     bmi = BMI.new
     bmiScore = bmi.questions
-    final += bmiScore
+    finalScore += bmiScore
 
     # Calculate the final score based off what the user has inputted
 
