@@ -34,7 +34,6 @@ class CaffeineQuestions
             score += 0
         end
 
-        puts score
 
         timeOfDay = prompt.select("What time of the day do you have your last coffee?", %w(Morning Midday Afternoon Night))
 
@@ -47,8 +46,6 @@ class CaffeineQuestions
         else
             score -= 5
         end
-
-        puts score
 
         choices = %w(Caffeine Alcohol Technology Excercise)
         habits = prompt.multi_select("How many of these do you do before bed", choices)
