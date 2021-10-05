@@ -33,9 +33,6 @@ class BMI
 end
 
 
-# Check what the user has entered and see if it is right\
-
-
 
 
 
