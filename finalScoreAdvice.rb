@@ -6,17 +6,20 @@ class FinalScoreAdvice
         @numberIuseElsewhere = finalScore
     end
 
+    # Get users score and tell them advice dependent
+
     def finalAdvice
-        if @numberIuseElsewhere == 1..3
-            puts "Thats an unhealthy sleep habit please fix".colorize(:red)
+        if @numberIuseElsewhere <= 1..3
+            puts "You potentially have poor sleep hygiene, please consult a health professional".colorize(:red)
         elsif @numberIuseElsewhere == 4..6
-            puts "Slightly better".colorize(:teal)
+            puts "You have average sleep hygiene, some postive change could improve it further".colorize(:teal)
         elsif @numberIuseElsewhere == 7..9
-            puts "Good try"
+            puts "You have above average sleep hygiene, this is a great start"
         elsif @numberIuseElsewhere == 15
-            puts "You have average sleeping habits".colorize(:magenta)
+            puts "You have good sleep hygiene, well done".colorize(:magenta)
         else
-            puts "Good sleeping habits"
+            puts "Reviewing your sleeping habits is important"
         end
     end
 end
+

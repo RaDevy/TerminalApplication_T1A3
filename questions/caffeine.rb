@@ -3,11 +3,11 @@ require "tty-prompt"
 class CaffeineQuestions
 
     def questions
-        
+        puts "There are many habits that can negatively affect your sleeping habits, one of them is caffeine."
         prompt = TTY::Prompt.new
-
         score = 0
 
+        puts "" 
         coffee = prompt.slider("How many cups of coffee do you have a day?", min: 0, max: 10, step: 1)
 
         case coffee
@@ -37,7 +37,8 @@ class CaffeineQuestions
             score += 0
         end
 
-        timeOfDay = prompt.select("What time of the day do you have your last coffee?", %w(Morning Midday Afternoon Night))
+        puts "Consuming large quantities of caffeine before bedtime can affect your sleep patterns "
+        timeOfDay = prompt.select("What time of the day do you have your last coffee or energy drink?", %w(Morning Midday Afternoon Night))
 
         if timeOfDay == "Morning"
             score += 10

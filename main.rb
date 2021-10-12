@@ -1,6 +1,11 @@
 require_relative "questions/caffeine.rb"
 require_relative "questions/bmi.rb"
 require_relative "finalScoreAdvice.rb"
+require_relative "questions/screenTime.rb"
+require_relative "questions/stressRelated.rb"
+
+
+
 require "tty-prompt"
 require "tty-progressbar"
 require "sounder"
@@ -24,7 +29,7 @@ _       __     __
 
 # Ask the user what they would like to do
 
-puts "Welcome to the sleep doctor, what can I help you with?"
+puts "Welcome to the sleep doctor, lets figure out how healthy your sleeping habits are!"
 prompt = TTY::Prompt.new
 choice = prompt.select("What would you like to do?", %w(Start Exit))
 
@@ -58,9 +63,26 @@ if choice == "Start"
     bmiScore = bmi.questions
     finalScore += bmiScore
 
+    # Initialize Screen time questions and start them for the user
+
+    screenTime = ScreenTimeQuestions.new
+    screenTimeScore = screenTime.questions
+    finalScore += screenTimeScore
+
+
+
+    # Initialize Psycholigical questions and start them for the user
+
+    stressRelated = StressRelatedQuestions.new
+    stressRelatedTimeScore = screenTime.questions
+    finalScore += stressRelatedTimeScore
+
+
+
+
     # Calculate the final score based off what the user has inputted
 
-    puts "Congratulatiomns your score was #{finalScore}"
+    puts "Congratulations your score was #{finalScore}"
 
     # Display advice depending on final results
 

@@ -1,9 +1,14 @@
 class BMI
 
     def questions
+
+        score = 0
+
+        # get users weight and use error handling so they cant give you a wrong answer
         begin
             puts "How much do you weigh?"
-            weight = gets.chomp.to_i
+            weight = Integer(gets.chomp)
+            
         rescue 
             puts "Please enter only numbers"
             retry
@@ -11,12 +16,16 @@ class BMI
         
         end
 
+        # get users height and use error handling so they cant give you a wrong answer
         puts "How tall are you? (in m's)"
         height = gets.chomp.to_f
-        score = 0
+
+        # calcualte users bmi
         bmi = (weight / (height * height))
         puts "Generating your bmi:"
         sleep(1)
+
+        # display custom message based on bmi
         if bmi <= 18.5
             puts "Your bmi is: #{Integer(bmi)} which is considered underweight"
             score -= 10
