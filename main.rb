@@ -69,15 +69,11 @@ if choice == "Start"
     screenTimeScore = screenTime.questions
     finalScore += screenTimeScore
 
-
-
     # Initialize Psycholigical questions and start them for the user
 
     stressRelated = StressRelatedQuestions.new
     stressRelatedTimeScore = screenTime.questions
     finalScore += stressRelatedTimeScore
-
-
 
 
     # Calculate the final score based off what the user has inputted
